@@ -15,7 +15,19 @@ class Test
 {
   public:
 
+  /**
+  *@brief runs all test and prints output to console
+  */
   void runTests();
+
+  /**
+  *@brief Prints PASSED\n or FAILED\n depending on the param result
+  */
+  void printResult(bool result);
+
+  void test1(); //IsEmpty returns true for empty list
+  void test2(); //size returns 0 for empty list
+  void test3(); //
 
 };
 

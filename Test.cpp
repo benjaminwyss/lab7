@@ -6,9 +6,8 @@
 */
 
 #include "Test.h"
-#include "LinkedListOfInts.h"
 
 void Test::runTests()
 {
-  std::cout << "I'm testing!\n";
+  std::cout << "Starting Tests!\n";
 }
