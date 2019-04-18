@@ -44,7 +44,7 @@ void Test::runTests()
   test32();
   test33();
   test34();
-  std::cout << "All Tests Finished!";
+  std::cout << "All Tests Finished!\n";
 }
 
 void Test::printResult(bool result)
@@ -71,16 +71,18 @@ void Test::test2()
 {
   std::cout << "TEST 2: IsEmpty returns false after 1 addBack: ";
   LinkedListOfInts list;
+  list.addBack(0);
 
-  printResult(true);
+  printResult(list.isEmpty() == false);
 }
 
 void Test::test3()
 {
   std::cout << "TEST 3: IsEmpty returns false after 1 addFront: ";
   LinkedListOfInts list;
+  list.addFront(0);
 
-  printResult(true);
+  printResult(list.isEmpty() == false);
 }
 
 void Test::test4()
@@ -88,71 +90,99 @@ void Test::test4()
   std::cout << "TEST 4: size returns 0 for empty list: ";
   LinkedListOfInts list;
 
-  printResult(true);
+  printResult(list.size() == 0);
 }
 
 void Test::test5()
 {
   std::cout << "TEST 5: size returns 1 after 1 addBack: ";
   LinkedListOfInts list;
+  list.addBack(0);
 
-  printResult(true);
+  printResult(list.size() == 1);
 }
 
 void Test::test6()
 {
   std::cout << "TEST 6: size returns 1 after 1 addFront: ";
   LinkedListOfInts list;
+  list.addFront(0);
 
-  printResult(true);
+  printResult(list.size() == 1);
 }
 
 void Test::test7()
 {
   std::cout << "TEST 7: size returns correct value after multiple addBack: ";
   LinkedListOfInts list;
+  list.addBack(1);
+  list.addBack(2);
+  list.addBack(3);
 
-  printResult(true);
+  printResult(list.size() == 3);
 }
 
 void Test::test8()
 {
   std::cout << "TEST 8: size returns correct value after multiple addFront: ";
   LinkedListOfInts list;
+  list.addFront(3);
+  list.addFront(2);
+  list.addFront(1);
 
-  printResult(true);
+  printResult(list.size() == 3);
 }
 
 void Test::test9()
 {
   std::cout << "TEST 9: size returns correct value after 1 addBack and 1 addFront: ";
   LinkedListOfInts list;
+  list.addFront(0);
+  list.addBack(1);
 
-  printResult(true);
+  printResult(list.size() == 2);
 }
 
 void Test::test10()
 {
   std::cout << "TEST 10: size returns correct value after multiple addFront and 1 removeFront: ";
   LinkedListOfInts list;
+  list.addFront(3);
+  list.addFront(2);
+  list.addFront(1);
+  list.removeFront();
 
-  printResult(true);
+  printResult(list.size() == 2);
 }
 
 void Test::test11()
 {
   std::cout << "TEST 11: size returns correct value after multiple addBack and 1 removeBack: ";
   LinkedListOfInts list;
+  list.addBack(1);
+  list.addBack(2);
+  list.addBack(3);
+  list.removeBack();
 
-  printResult(true);
+  printResult(list.size() == 2);
 }
 
 void Test::test12()
 {
-  std::cout << "TEST 12: size returns correct value after multiple addFront, AddBack, removeFront, and removeBack: ";
+  std::cout << "TEST 12: size returns correct value after multiple addFront, addBack, removeFront, and removeBack: ";
   LinkedListOfInts list;
+  list.addFront(3);
+  list.addFront(2);
+  list.addBack(1);
+  list.addBack(0);
+  list.addBack(5);
+  list.addFront(4);
+  list.removeFront();
+  list.removeBack();
+  list.removeBack();
+  list.removeFront();
 
-  printResult(true);
+  printResult(list.size() == 2);
 }
 
 void Test::test13()
@@ -160,31 +190,40 @@ void Test::test13()
   std::cout << "TEST 13: search returns false for empty list: ";
   LinkedListOfInts list;
 
-  printResult(true);
+  printResult(list.search(0) == false);
 }
 
 void Test::test14()
 {
-  std::cout << "TEST 14: search returns false when value is not in last: ";
+  std::cout << "TEST 14: search returns false when value is not in list: ";
   LinkedListOfInts list;
+  list.addBack(0);
 
-  printResult(true);
+  printResult(list.search(1) == false);
 }
 
 void Test::test15()
 {
   std::cout << "TEST 15: search returns true when value is in list: ";
   LinkedListOfInts list;
+  list.addBack(0);
+  list.addBack(1);
+  list.addBack(2);
+  list.addBack(3);
 
-  printResult(true);
+  printResult(list.search(2));
 }
 
 void Test::test16()
 {
   std::cout << "TEST 16: search returns true when value is in list multiple times: ";
   LinkedListOfInts list;
+  list.addBack(0);
+  list.addBack(0);
+  list.addBack(0);
+  list.addBack(0);
 
-  printResult(true);
+  printResult(list.search(0));
 }
 
 void Test::test17()
