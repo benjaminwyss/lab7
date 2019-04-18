@@ -20,11 +20,6 @@ class Test
   */
   void runTests();
 
-  /**
-  *@brief Prints PASSED\n or FAILED\n depending on the param result
-  */
-  void printResult(bool result);
-
   void test1(); //IsEmpty returns true for empty list
   void test2(); //IsEmpty returns false after 1 addBack
   void test3(); //IsEmpty returns false after 1 addFront
@@ -59,6 +54,18 @@ class Test
   void test32(); //multiple removeFront results in the correct list
   void test33(); //1 removeBack and 1 removeFront results in the correct list
   void test34(); //multiple removeBack and multiple removeFront results in the correct list
+
+  private:
+    
+  /**
+  *@brief Prints PASSED\n or FAILED\n depending on the param result
+  */
+  void printResult(bool result);
+
+  /**
+  *@brief returns true if the provided list matches the expected vector
+  */
+  bool compare(LinkedListOfInts list, std::vector<int> expected);
 
 };
 

@@ -59,6 +59,11 @@ void Test::printResult(bool result)
   }
 }
 
+bool Test::compare(LinkedListOfInts list, std::vector<int> expected)
+{
+  return (list.toVector() == expected);
+}
+
 void Test::test1()
 {
   std::cout << "TEST 1: IsEmpty returns true for empty list: ";
@@ -231,15 +236,18 @@ void Test::test17()
   std::cout << "TEST 17: toVector returns empty vector from empty list: ";
   LinkedListOfInts list;
 
-  printResult(true);
+  printResult(list.toVector().empty());
 }
 
 void Test::test18()
 {
   std::cout << "TEST 18: toVector returns correct vector from filled list: ";
   LinkedListOfInts list;
+  list.addFront(1);
+  list.addFront(2);
+  list.addFront(3);
 
-  printResult(true);
+  printResult(compare(list, {3, 2, 1}));
 }
 
 void Test::test19()
