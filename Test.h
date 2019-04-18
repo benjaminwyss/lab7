@@ -36,7 +36,7 @@ class Test
   void test9(); //size returns correct value after 1 addBack and 1 addFront
   void test10(); //size returns correct value after multiple addFront and 1 removeFront
   void test11(); //size returns correct value after multiple addBack and 1 removeBack
-  void test12(); //size returns correct value after multiple addFront, multiple AddBack, multiple removeFront, and multiple removeBack
+  void test12(); //size returns correct value after multiple addFront, AddBack, removeFront, and removeBack
   void test13(); //search returns false for empty list
   void test14(); //search returns false when value is not in last
   void test15(); //search returns true when value is in list
@@ -59,7 +59,6 @@ class Test
   void test32(); //multiple removeFront results in the correct list
   void test33(); //1 removeBack and 1 removeFront results in the correct list
   void test34(); //multiple removeBack and multiple removeFront results in the correct list
-
 
 };
 
