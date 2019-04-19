@@ -254,48 +254,63 @@ void Test::test19()
 {
   std::cout << "TEST 19: 1 addBack results in the correct list: ";
   LinkedListOfInts list;
+  list.addBack(0);
 
-  printResult(true);
+  printResult(compare(list, {0}));
 }
 
 void Test::test20()
 {
   std::cout << "TEST 20: multiple addBack results in the correct list: ";
   LinkedListOfInts list;
+  list.addBack(1);
+  list.addBack(2);
+  list.addBack(3);
 
-  printResult(true);
+  printResult(compare(list, {1, 2, 3}));
 }
 
 void Test::test21()
 {
   std::cout << "TEST 21: 1 addFront results in the correct list: ";
   LinkedListOfInts list;
+  list.addFront(0);
 
-  printResult(true);
+  printResult(compare(list, {0}));
 }
 
 void Test::test22()
 {
   std::cout << "TEST 22: multiple addFront results in the correct list: ";
   LinkedListOfInts list;
+  list.addFront(3);
+  list.addFront(2);
+  list.addFront(1);
+  list.addFront(4);
 
-  printResult(true);
+  printResult(compare(list, {4, 1, 2, 3}));
 }
 
 void Test::test23()
 {
   std::cout << "TEST 23: 1 addBack and 1 addFront results in the correct list: ";
   LinkedListOfInts list;
+  list.addBack(0);
+  list.addFront(1);
 
-  printResult(true);
+  printResult(compare(list, {1, 0}));
 }
 
 void Test::test24()
 {
   std::cout << "TEST 24: multiple addBack and multiple addFront results in the correct list: ";
   LinkedListOfInts list;
+  list.addBack(5);
+  list.addFront(4);
+  list.addFront(3);
+  list.addBack(6);
 
-  printResult(true);
+  printResult(compare(list, {3, 4, 5, 6}));
 }
 
 void Test::test25()
@@ -303,31 +318,41 @@ void Test::test25()
   std::cout << "TEST 25: removeBack returns false on an empty list: ";
   LinkedListOfInts list;
 
-  printResult(true);
+  printResult(list.removeBack() == false);
 }
 
 void Test::test26()
 {
   std::cout << "TEST 26: removeBack returns true on a nonempty list: ";
   LinkedListOfInts list;
+  list.addBack(0);
+  list.addBack(1);
 
-  printResult(true);
+  printResult(list.removeBack());
 }
 
 void Test::test27()
 {
   std::cout << "TEST 27: 1 removeBack results in the correct list: ";
   LinkedListOfInts list;
+  list.addBack(0);
+  list.addBack(1);
+  list.removeBack();
 
-  printResult(true);
+  printResult(compare(list, {0}));
 }
 
 void Test::test28()
 {
   std::cout << "TEST 28: multiple removeBack results in the correct list: ";
   LinkedListOfInts list;
+  list.addBack(0);
+  list.addBack(1);
+  list.addBack(2);
+  list.removeBack();
+  list.removeBack();
 
-  printResult(true);
+  printResult(compare(list, {0}));
 }
 
 void Test::test29()
@@ -335,45 +360,70 @@ void Test::test29()
   std::cout << "TEST 29: removeFront returns false on an empty list: ";
   LinkedListOfInts list;
 
-  printResult(true);
+  printResult(list.removeFront() == false);
 }
 
 void Test::test30()
 {
   std::cout << "TEST 30: removeFront returns true on a nonempty list: ";
   LinkedListOfInts list;
+  list.addFront(0);
+  list.addFront(-1);
+  list.removeFront();
 
-  printResult(true);
+  printResult(list.removeFront());
 }
 
 void Test::test31()
 {
   std::cout << "TEST 31: 1 removeFront results in the correct list: ";
   LinkedListOfInts list;
+  list.addFront(0);
+  list.addFront(-1);
+  list.removeFront();
 
-  printResult(true);
+  printResult(compare(list, {0}));
 }
 
 void Test::test32()
 {
   std::cout << "TEST 32: multiple removeFront results in the correct list: ";
   LinkedListOfInts list;
+  list.addFront(0);
+  list.addFront(-1);
+  list.addFront(-2);
+  list.removeFront();
+  list.removeFront();
 
-  printResult(true);
+  printResult(compare(list, {0}));
 }
 
 void Test::test33()
 {
   std::cout << "TEST 33: 1 removeBack and 1 removeFront results in the correct list: ";
   LinkedListOfInts list;
+  list.addFront(3);
+  list.addFront(2);
+  list.addFront(1);
+  list.removeFront();
+  list.removeBack();
 
-  printResult(true);
+  printResult(compare(list, {2}));
 }
 
 void Test::test34()
 {
   std::cout << "TEST 34: multiple removeBack and multiple removeFront results in the correct list: ";
   LinkedListOfInts list;
+  list.addFront(5);
+  list.addFront(4);
+  list.addFront(3);
+  list.addFront(2);
+  list.addFront(1);
+  list.removeFront();
+  list.removeBack();
+  list.removeBack();
+  list.removeFront();
 
-  printResult(true);
+  printResult(compare(list, {3}));
 }
