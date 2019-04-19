@@ -1,1 +1,4 @@
-addBack actually adds to the front of the list
+isEmpty always returns true
+addBack adds to the front of the list instead of the back
+removeBack does not remove from the list and instead just returns false
+removeFront does not remove from the list and instead just returns false
